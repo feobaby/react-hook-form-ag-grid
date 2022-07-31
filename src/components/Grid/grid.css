@@ -1,0 +1,24 @@
+body {
+    background-color: antiquewhite;
+}
+.grid {
+    margin: 0 auto;
+}
+.header {
+    text-align: center;
+    font-size: 30px;
+}
+.button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background: #1e1c1d;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 100;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    letter-spacing: 1px;
+}
