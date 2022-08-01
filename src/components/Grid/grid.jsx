@@ -6,13 +6,8 @@ import './grid.css';
 import { ROWDATA } from '../Data/data';
 import Form from '../Form/form';
 
-export default function Ah() {
+export default function Grid() {
   const [users, setUsers] = useState(ROWDATA);
-
-  const addUser = (user) => {
-    user.id = users.length + 1;
-    setUsers([...users, user]);
-  };
 
   const gridOptions = {
     defaultColDef: {
@@ -39,18 +34,18 @@ export default function Ah() {
     ],
   };
 
-  const [showForm, setShowForm] = useState(false);
-  const [buttonText] = useState('Form');
-  const onClickForm = () => {
-    setShowForm(!showForm);
+  const addUser = (user) => {
+    user.id = users.length + 1;
+    setUsers([...users, user]);
   };
-
+  const [showForm, setShowForm] = useState(false);
+  const onClickForm = () => setShowForm(!showForm);
   return (
     <>
       <p className="header">Using AG Grid with React Hook Form</p>
       <div>
         <button className="button" onClick={onClickForm}>
-          {buttonText}
+          Form
         </button>
         {showForm ? <Form addUser={addUser} /> : null}
       </div>
