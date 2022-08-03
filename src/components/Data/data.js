@@ -237,4 +237,4 @@ const ROWDATA = [
   },
 ];
 
-export { ROWDATA };
+export default ROWDATA;

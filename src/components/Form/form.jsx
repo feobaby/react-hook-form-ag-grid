@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import './form.css';
 
-export default function Form(props) {
+export const EditForm = (props) => {
+  const { currentUser, updateUser } = props;
   const {
     register,
     formState: { errors },
@@ -20,12 +21,16 @@ export default function Form(props) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+
     setUser({ ...user, [name]: value });
   };
 
+  useEffect(() => {
+    setUser(currentUser);
+  }, [props]);
+
   const onSubmit = () => {
-    props.addUser(user);
-    alert('A new user has been added!');
+    updateUser(user.id, user);
   };
 
   return (
@@ -102,4 +107,6 @@ export default function Form(props) {
       <br />
     </form>
   );
-}
+};
+
+export default EditForm;
