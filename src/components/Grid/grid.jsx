@@ -51,15 +51,14 @@ export default function DisplayGrid() {
     ],
   };
 
-  const onSelectionChanged = () => {
-    const selectedRows = gridRef.current.api.getSelectedRows();
+  const onRowSelected = (gridRef) => {
     setCurrentUser({
-      id: selectedRows[0].id,
-      name: selectedRows[0].name,
-      username: selectedRows[0].username,
-      email: selectedRows[0].email,
-      phone: selectedRows[0].phone,
-      website: selectedRows[0].website,
+      id: gridRef.data.id,
+      name: gridRef.data.name,
+      username: gridRef.data.username,
+      email: gridRef.data.email,
+      phone: gridRef.data.phone,
+      website: gridRef.data.website,
     });
   };
 
@@ -86,7 +85,7 @@ export default function DisplayGrid() {
           rowData={users}
           gridOptions={gridOptions}
           rowSelection={'single'}
-          onSelectionChanged={onSelectionChanged}
+          onRowSelected={onRowSelected}
         />
       </div>
       <br />
