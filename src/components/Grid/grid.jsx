@@ -51,14 +51,14 @@ export default function DisplayGrid() {
     ],
   };
 
-  const onRowSelected = (gridRef) => {
+  const onRowSelected = (params) => {
     setCurrentUser({
-      id: gridRef.data.id,
-      name: gridRef.data.name,
-      username: gridRef.data.username,
-      email: gridRef.data.email,
-      phone: gridRef.data.phone,
-      website: gridRef.data.website,
+      id: params.data.id,
+      name: params.data.name,
+      username: params.data.username,
+      email: params.data.email,
+      phone: params.data.phone,
+      website: params.data.website,
     });
   };
 
